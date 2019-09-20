@@ -1,0 +1,206 @@
+[
+  {
+    "type": ".*",
+    "provider": "aws",
+    "name": "Id",
+    "template": "$.id"
+  },
+  {
+    "type": ".*",
+    "provider": "aws",
+    "name": "ARN",
+    "template": "$.arn"
+  },
+  {
+    "type": ".*",
+    "provider": "aws",
+    "name": "Name",
+    "template": "$.name"
+  },
+  {
+    "type": ".*_subnet_group",
+    "provider": "aws",
+    "name": "Subnets",
+    "template": "$.subnet_ids"
+  },
+  {
+    "type": "aws_route53_record",
+    "provider": "aws",
+    "name": "DNS Records",
+    "template": "$.records[*]"
+  },
+  {
+    "type": "aws_route53_record",
+    "provider": "aws",
+    "name": "FQDN",
+    "template": "$.fqdn"
+  },
+  {
+    "type": ".*",
+    "provider": "aws",
+    "name": "Availability zones",
+    "template": "$.availability_zones[*]"
+  },
+  {
+    "type": ".*_instance",
+    "provider": "aws",
+    "name": "Instance class",
+    "template": "$.instance_class"
+  },
+  {
+    "type": ".*",
+    "provider": "aws",
+    "name": "Description",
+    "template": "$.description"
+  },
+  {
+    "type": "aws_security_group_rule",
+    "provider": "aws",
+    "name": "From port",
+    "template": "$.from_port"
+  },
+  {
+    "type": "aws_security_group_rule",
+    "provider": "aws",
+    "name": "To port",
+    "template": "$.to_port"
+  },
+  {
+    "type": "aws_security_group_rule",
+    "provider": "aws",
+    "name": "CIDR IPv4",
+    "template": "$.cidr_blocks[*]"
+  },
+  {
+    "type": ".*",
+    "provider": "kubernetes",
+    "name": "Name",
+    "template": "$.metadata[*].name"
+  },
+  {
+    "type": ".*",
+    "provider": "kubernetes",
+    "name": "Namespace",
+    "template": "$.metadata[*].namespace"
+  },
+  {
+    "type": "kubernetes_deployment",
+    "provider": "kubernetes",
+    "name": "Containers",
+    "template": "$.spec[*].template[*].spec[*].container[*].image"
+  },
+  {
+    "type": "kubernetes_service",
+    "provider": "kubernetes",
+    "name": "Hostname",
+    "template": "$.load_balancer_ingress[*].hostname"
+  },
+  {
+    "type": "kubernetes_service",
+    "provider": "kubernetes",
+    "name": "Port",
+    "template": "$.spec[*].port[*].port"
+  },
+  {
+    "type": "kubernetes_cron_job",
+    "provider": "kubernetes",
+    "name": "Schedule",
+    "template": "$.spec[*].schedule"
+  },
+  {
+    "type": "kubernetes_cron_job",
+    "provider": "kubernetes",
+    "name": "Containers",
+    "template": "$.spec[*].job_template[*].spec[*].template[*].spec[*].container[*].image"
+  },
+  {
+    "type": "kubernetes_cron_job",
+    "provider": "kubernetes",
+    "name": "Arguments",
+    "template": "$.spec[*].job_template[*].spec[*].template[*].spec[*].container[*].args[*]"
+  },
+  {
+    "type": "kubernetes_deployment_container",
+    "provider": "kubernetes",
+    "name": "Name",
+    "template": "$.name"
+  },
+  {
+    "type": "kubernetes_deployment_container",
+    "provider": "kubernetes",
+    "name": "Image",
+    "template": "$.image"
+  },
+  {
+    "type": "kubernetes_deployment_container",
+    "provider": "kubernetes",
+    "name": "Arguments",
+    "template": "$.args[*]"
+  },
+  {
+    "type": "kubernetes_container_env",
+    "provider": "kubernetes",
+    "name": "Value",
+    "template": "$.value"
+  },
+  {
+    "type": "kubernetes_container_env",
+    "provider": "kubernetes",
+    "name": "Secret name",
+    "template": "$.value_from[*].secret_key_ref[*].name"
+  },
+  {
+    "type": "kubernetes_container_env",
+    "provider": "kubernetes",
+    "name": "Secret key",
+    "template": "$.value_from[*].secret_key_ref[*].key"
+  },
+  {
+    "type": "helm_release",
+    "provider": "helm",
+    "name": "Id",
+    "template": "$.id"
+  },
+  {
+    "type": "helm_release",
+    "provider": "helm",
+    "name": "Chart",
+    "template": "$.chart"
+  },
+  {
+    "type": "helm_release",
+    "provider": "helm",
+    "name": "Revision",
+    "template": "$.metadata[*].revision"
+  },
+  {
+    "type": "helm_release",
+    "provider": "helm",
+    "name": "Namespace",
+    "template": "$.metadata[*].namespace"
+  },
+  {
+    "type": "helm_repository",
+    "provider": "helm",
+    "name": "Id",
+    "template": "$.id"
+  },
+  {
+    "type": "helm_repository",
+    "provider": "helm",
+    "name": "Name",
+    "template": "$.name"
+  },
+  {
+    "type": "helm_repository",
+    "provider": "helm",
+    "name": "Url",
+    "template": "$.url"
+  },
+  {
+    "type": ".*",
+    "provider": "kubernetes",
+    "name": "Labels",
+    "template": "$.metadata[*].labels"
+  }
+]

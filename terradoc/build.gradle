@@ -1,0 +1,56 @@
+plugins {
+    id 'application'
+    id 'distribution'
+}
+
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+sourceSets {
+    integrationTest {
+        java.srcDir file('src/it/java')
+        resources.srcDir file('src/it/resources')
+        compileClasspath += sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+        runtimeClasspath += sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'de.lise.terradoc.cli.Main'
+}
+
+
+task integrationTest(type: Test) {
+    group 'Verification'
+    useJUnitPlatform()
+    description 'Runs the integration tests.'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+check.dependsOn integrationTest
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+dependencies {
+    implementation project(':core')
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+    implementation 'info.picocli:picocli:4.0.4'
+
+    testImplementation 'org.mockito:mockito-core:1.+'
+    testImplementation 'org.assertj:assertj-core:3.11.1'
+    testImplementation "org.mockito:mockito-core:2.+"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
+

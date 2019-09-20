@@ -1,0 +1,37 @@
+{
+  "format_version": "0.1",
+  "terraform_version": "0.12.6",
+  "values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "null_resource.test_resource_1",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "test_resource_1",
+          "provider_name": "null",
+          "schema_version": 0,
+          "values": {
+            "id": "2727665559118560862",
+            "triggers": null
+          }
+        },
+        {
+          "address": "null_resource.test_resource_2",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "test_resource_2",
+          "provider_name": "null",
+          "schema_version": 0,
+          "values": {
+            "id": "8826953726744800176",
+            "triggers": null
+          },
+          "depends_on": [
+            "null_resource.test_resource_1"
+          ]
+        }
+      ]
+    }
+  }
+}

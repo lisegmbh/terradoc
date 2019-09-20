@@ -1,0 +1,23 @@
+[
+  {
+    "virtualType": "kubernetes_deployment_container",
+    "type": "kubernetes_deployment",
+    "provider": "kubernetes",
+    "valuesSelector": "$.spec[*].template[*].spec[*].container[*]",
+    "nameSelector": "$.name"
+  },
+  {
+    "virtualType": "kubernetes_deployment_container",
+    "type": "kubernetes_cron_job",
+    "provider": "kubernetes",
+    "valuesSelector": "$.spec[*].job_template[*].spec[*].template[*].spec[*].container[*]",
+    "nameSelector": "$.name"
+  },
+  {
+    "virtualType": "kubernetes_container_env",
+    "type": "kubernetes_deployment_container",
+    "provider": "kubernetes",
+    "valuesSelector": "$.env[*]",
+    "nameSelector": "$.name"
+  }
+]
