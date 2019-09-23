@@ -31,7 +31,7 @@ will be rendered using an embedded JavaScript engine. Further information can be
 ## Getting Started
 
 ### Installation
-1. Download the binaries from this project's release page
+1. Download the binaries from this [project's release page](releases)
 2. Unzip the archive and add the ``/bin`` directory to your ``PATH`` variable
 
 There are also some ready-to-use Docker images available - just head over to our [Docker Hub Repository](https://hub.docker.com/r/lisegmbh/terradoc).
@@ -100,7 +100,7 @@ A value selector looks like this:
 }
 ```
 | Property | Description |
-|:--------:|:------------|
+| -------- | :------------ |
 | ``type`` | A regular expression specifying the resource type, this selector should be applied to. |
 | ``provider`` | A regular expression specifying the provider, this selector should be applied to. |
 | ``name`` | The value's name that should be displayed in the table. |
