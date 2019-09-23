@@ -31,7 +31,7 @@ will be rendered using an embedded JavaScript engine. Further information can be
 ## Getting Started
 
 ### Installation
-1. Download the binaries from this [project's release page](releases)
+1. Download the binaries from this [project's release page](https://github.com/lisegmbh/terradoc/releases)
 2. Unzip the archive and add the ``/bin`` directory to your ``PATH`` variable
 
 There are also some ready-to-use Docker images available - just head over to our [Docker Hub Repository](https://hub.docker.com/r/lisegmbh/terradoc).
