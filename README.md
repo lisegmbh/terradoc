@@ -99,8 +99,9 @@ A value selector looks like this:
     "template": "$.subnet_ids"
 }
 ```
+
 | Property | Description |
-| -------- | :------------ |
+| :--------: | :------------ |
 | ``type`` | A regular expression specifying the resource type, this selector should be applied to. |
 | ``provider`` | A regular expression specifying the provider, this selector should be applied to. |
 | ``name`` | The value's name that should be displayed in the table. |
